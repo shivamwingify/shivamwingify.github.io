@@ -11,14 +11,14 @@
         h=u.getElementsByTagName('script')[0];
         h.parentNode.insertBefore(s,h);
     })(window,document);
-    p._pcq.push(['APIReady', callbackOnSuccessFunction,callbackOnFailureFunction]); //will execute callback function when PushCrew API is ready
+    _pcq.push(['APIReady', callbackOnSuccessFunction,callbackOnFailureFunction]);
 
   function callbackOnSuccessFunction() {
     console.log("API is ready")
   }
 
   function callbackOnFailureFunction(values) {
-    console.log(values.reasons) //It will give you the array of reasons why PushCrew API could not get ready .For eg:- ["PRIVATE_BROWSING", "BROWSER_NOT_SUPPORTED"] etc.
+    console.log(values.reasons)
   }
   </script>
 </head>

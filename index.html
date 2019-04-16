@@ -14,7 +14,7 @@
     _pcq.push(['APIReady', callbackOnSuccessFunction,callbackOnFailureFunction]);
 
   function callbackOnSuccessFunction() {
-    console.log("API is ready")
+    _pcq.push(['noTrigger', true])
   }
 
   function callbackOnFailureFunction(values) {

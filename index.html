@@ -18,7 +18,7 @@
       _pcq.push(['addSubscriberToSegment', 'homepage', callbackForAddToSegment]);
     }
     
-    function callbackForAddToSegment(response) {
+    function callbackForRemoveFromSegment(response) {
       if(response === -1) {
           console.log('User is not a subscriber or has blocked notifications');
       }
@@ -36,7 +36,7 @@
   
   function callbackOnSuccessfulSubscription(subscriberId, values) {
     //user just got subscribed
-    _pcq.push(['addSubscriberToSegment', 'Boys', callbackForAddToSegment]);
+    _pcq.push(['removeSubscriberFromSegment', 'Boys', callbackForRemoveFromSegment]);
   }
   </script>
 </head>

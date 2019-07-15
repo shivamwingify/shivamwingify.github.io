@@ -17,7 +17,11 @@
 	<script>
 	_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 	function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {	
-	document.getElementById("bellIcon").style.display = "none";
+		document.getElementById("bellIcon").style.display = "none";
+	}
+	_pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]); //registers callback function to be called when user gets successfully subscribed
+	function callbackFunctionOnFailedSubscription(values) {
+		document.getElementById("bellIcon").style.display = "none";
 	}
 	</script>
 	

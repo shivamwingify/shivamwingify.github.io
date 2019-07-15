@@ -15,6 +15,9 @@
   </script>
 	
 	<script>
+	if (pushcrew.subscriberId=== -1){
+		document.getElementById("bellIcon").style.display = "none";
+	}
 	_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 	function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {	
 		document.getElementById("bellIcon").style.display = "none";

@@ -17,14 +17,13 @@
 	<script>
 	_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 	function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
-		if (pushcrew.subscribed== true){
+		if (pushcrew.subscriberId!= -1){
 		document.getElementById("bellIcon").style.display = "none";
 		}
 	}
 	_pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]); //registers callback function to be called when user gets successfully subscribed
 	function callbackFunctionOnFailedSubscription(values) {
-		if (pushcrew.subscribed== false)
-		{
+		if (pushcrew.subscriberId!= -1){
 		document.getElementById("bellIcon").style.display = "none";
 		}
 	}

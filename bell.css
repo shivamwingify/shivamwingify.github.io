@@ -46,7 +46,7 @@
 
 .bell-icon-notification-left .bell-icon-message::before {
   content: '';
-  display: inline;
+  display: block;
   position: absolute;
   border: 10px solid transparent;
   top: 50%;

@@ -29,7 +29,9 @@
 		if (checkStatus== "subscribed") {
 			document.getElementById("bellIcon").style.display = "none";
 		}
-
+		if (Notification.permission== "denied"){
+			document.getElementById("bellIcon").style.display = "none";
+		}
 		_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 		console.log(checkStatus);	
 		function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {

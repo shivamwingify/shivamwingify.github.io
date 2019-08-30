@@ -46,6 +46,9 @@
 	<div class="bell-icon-message">Subscribe to Notifications</div>
 	</div>
 	<script>
+		function bellIconClicked() {
+			_pcq.push(['triggerOptIn']);
+		}
 		var checkStatus = localStorage.getItem('wingify_push_subscription_status');
 		if (checkStatus== "subscribed") {
 			document.getElementById("bellIcon").style.display = "none";
@@ -61,9 +64,6 @@
 		_pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]);
 		function callbackFunctionOnFailedSubscription(values) {
 				document.getElementById("bellIcon").style.display = "none";
-		}
-		function bellIconClicked() {
-			_pcq.push(['triggerOptIn']);
 		}
 	</script>
 </body>

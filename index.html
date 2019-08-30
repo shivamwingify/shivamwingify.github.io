@@ -46,25 +46,25 @@
 	<div class="bell-icon-message">Subscribe to Notifications</div>
 	</div>
 	<script>
+		var checkStatus = localStorage.getItem('wingify_push_subscription_status');
 		function bellIconClicked() {
+			if (checkStatus== "subscribed") {
+				document.getElementById("bellIcon").style.display = "none";
+			}	
+			if (Notification.permission== "denied"){
+				window.open("https://help.vwo.com/hc/en-us/articles/360007700494-How-to-unblock-notifications-from-a-website-that-you-once-blocked-", '_blank', 'width=700,height=500,left=200,top=100');			
+			}
 			_pcq.push(['triggerOptIn']);
 		}
-		var checkStatus = localStorage.getItem('wingify_push_subscription_status');
-		if (checkStatus== "subscribed") {
-			document.getElementById("bellIcon").style.display = "none";
-		}
-		if (Notification.permission== "denied"){
-			window.open("https://help.vwo.com/hc/en-us/articles/360007700494-How-to-unblock-notifications-from-a-website-that-you-once-blocked-", '_blank', 'width=700,height=500,left=200,top=100');			
-		}
-		_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]);
-		console.log(checkStatus);
-		function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
-			document.getElementById("bellIcon").style.display = "none";
-		}
-		_pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]);
-		function callbackFunctionOnFailedSubscription(values) {
-				document.getElementById("bellIcon").style.display = "none";
-		}
+		//_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]);
+		//console.log(checkStatus);
+		//function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+		//	document.getElementById("bellIcon").style.display = "none";
+		//}
+		//_pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]);
+		//function callbackFunctionOnFailedSubscription(values) {
+		//		document.getElementById("bellIcon").style.display = "none";
+		//}
 	</script>
 </body>
 </html>

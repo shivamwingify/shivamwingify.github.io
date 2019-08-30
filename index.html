@@ -52,12 +52,11 @@
 				document.getElementById("bellIcon").style.display = "none";
 			}
 			if (Notification.permission== "denied"){
-				//document.getElementById("bellIcon").style.display = "none";
-			}
+				window.open("https://help.vwo.com/hc/en-us/articles/360007700494-How-to-unblock-notifications-from-a-website-that-you-once-blocked-");			}
 			_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]);
 			console.log(checkStatus);
 			function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
-					document.getElementById("bellIcon").style.display = "none";
+				document.getElementById("bellIcon").style.display = "none";
 			}
 			_pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]);
 			function callbackFunctionOnFailedSubscription(values) {

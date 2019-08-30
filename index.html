@@ -52,7 +52,8 @@
 				document.getElementById("bellIcon").style.display = "none";
 			}
 			if (Notification.permission== "denied"){
-				window.open("https://help.vwo.com/hc/en-us/articles/360007700494-How-to-unblock-notifications-from-a-website-that-you-once-blocked-");			}
+				window.open("https://help.vwo.com/hc/en-us/articles/360007700494-How-to-unblock-notifications-from-a-website-that-you-once-blocked-", '_blank', 'width=700,height=500,left=200,top=100');			
+			}
 			_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]);
 			console.log(checkStatus);
 			function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {

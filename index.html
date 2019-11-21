@@ -1,22 +1,8 @@
 <html>
 <head>
-	<!-- <link href="https://db.onlinewebfonts.com/c/cc4c7e3aa2ab2258b5e0bc946be1093a?family=Akkurat-Bold" rel="stylesheet" type="text/css"/> -->
-	<style  type="text/css">
-		@font-face {font-family: "Akkurat-Bold";
-		  src: url("cc4c7e3aa2ab2258b5e0bc946be1093a.eot"); /* IE9*/
-		  src: url("cc4c7e3aa2ab2258b5e0bc946be1093a.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-		  url("cc4c7e3aa2ab2258b5e0bc946be1093a.woff2") format("woff2"), /* chrome、firefox */
-		  url("cc4c7e3aa2ab2258b5e0bc946be1093a.woff") format("woff"), /* chrome、firefox */
-		  url("cc4c7e3aa2ab2258b5e0bc946be1093a.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-		  url("cc4c7e3aa2ab2258b5e0bc946be1093a.svg#Akkurat-Bold") format("svg"); /* iOS 4.1- */
-		}
-	</style>
 	<style>
 		.pushcrew-chrome-style-notification-safari {
 		     background-color: #FFF !important;
-		}
-		.pushcrew-notification-title-safari {
-			font-size: 20px !important;
 		}
 		.pushcrew-chrome-style-notification-safari .pushcrew-chrome-style-notification-btn.pushcrew-btn-allow {
 		     border: 1px solid #f5a019 !important;
@@ -107,7 +93,7 @@
 				    var allowBtn = document.getElementsByClassName('pushcrew-chrome-style-notification-btn')[1];
 				    closeBtn.innerHTML = 'Deny Notifications';
 				    allowBtn.innerHTML = 'Allow Notifications';
-				    document.getElementsByClassName('pushcrew-notification-message-safari')[0].innerHTML = 'I have read Napapijri\'s <a href="https://www.napapijri.co.uk/help/privacy.html" target="_blank" style="text-decoration: none;"> Privacy Policy </a> and I consent to the processing of my personal data for marketing and profiling purpose.';
+				    document.getElementsByClassName('pushcrew-notification-message-safari')[0].innerHTML = 'I have read Napapijri\'s <a href="https://www.napapijri.co.uk/help/privacy.html" target="_blank" style="text-decoration: none;"> <u>Privacy Policy</u> </a> and I consent to the processing of my personal data for marketing and profiling purpose.';
 				    observer.disconnect();
 				}
 			    }

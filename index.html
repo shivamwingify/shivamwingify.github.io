@@ -93,31 +93,33 @@
 	<p> This is the home page. </p>
 	<a href="#" onclick="buttonClicked()">Click here to move forward.</a>
 	<script>
-		var checkStatus = localStorage.getItem('wingify_push_subscription_status');
-		console.log(checkStatus);
-
-		if (checkStatus== "subscribed") {
-			_pcq.push(['addSubscriberToSegment', 'Test', callbackForAddToSegment]);
-			function callbackForAddToSegment(response) {
-			    if(response === -1) {
-				console.log('User is not a subscriber or has blocked notifications');
-			    }
-
-			    if(response === false) {
-				console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
-			    }
-
-			    if(response === true) {
-				console.log('User got added to the segment successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
-			    }
-			}
-		}	
-
 		function buttonClicked() {
 			if (Notification.permission== "denied"){
 				window.open("https://help.vwo.com/hc/en-us/articles/360007700494-How-to-unblock-notifications-from-a-website-that-you-once-blocked-", '_blank', 'width=700,height=500,left=200,top=100');			
 			}
+			if (Notification.permission== "granted"){
+				alert("Already Subscribed!!!");
+			}
 			_pcq.push(['triggerOptIn']);
+			var checkStatus = localStorage.getItem('wingify_push_subscription_status');
+			console.log(checkStatus);
+
+			if (checkStatus== "subscribed") {
+				_pcq.push(['addSubscriberToSegment', 'Test', callbackForAddToSegment]);
+				function callbackForAddToSegment(response) {
+				    if(response === -1) {
+					console.log('User is not a subscriber or has blocked notifications');
+				    }
+
+				    if(response === false) {
+					console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
+				    }
+
+				    if(response === true) {
+					console.log('User got added to the segment successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
+				    }
+				}
+			}
 		}
 
 	</script>

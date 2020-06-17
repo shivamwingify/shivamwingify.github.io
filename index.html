@@ -91,7 +91,36 @@
 	
 	<h1> My sample website. </h1>
 	<p> This is the home page. </p>
-	<a href="second.html">Click here to move forward.</a>
+	<a href="second.html" onclick="buttonClicked()">Click here to move forward.</a>
+	<script>
+		var checkStatus = localStorage.getItem('wingify_push_subscription_status');
+		console.log(checkStatus);
+
+		if (checkStatus== "subscribed") {
+			_pcq.push(['addSubscriberToSegment', 'Test', callbackForAddToSegment]);
+			function callbackForAddToSegment(response) {
+			    if(response === -1) {
+				console.log('User is not a subscriber or has blocked notifications');
+			    }
+
+			    if(response === false) {
+				console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
+			    }
+
+			    if(response === true) {
+				console.log('User got added to the segment successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
+			    }
+			}
+		}	
+
+		function buttonClicked() {
+			if (Notification.permission== "denied"){
+				window.open("https://help.vwo.com/hc/en-us/articles/360007700494-How-to-unblock-notifications-from-a-website-that-you-once-blocked-", '_blank', 'width=700,height=500,left=200,top=100');			
+			}
+			_pcq.push(['triggerOptIn']);
+		}
+
+	</script>
 <!--	<button class="bell-icon-container bell-icon-notification-left" id ='bellIcon' onclick="bellIconClicked()">
 	<svg class="bell-icon-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" fill="currentColor">
 	<path d="M11.0006 27.8252C9.20627 27.8252 7.75077 26.371 7.75077 24.5753H14.2499C14.2503 26.371 12.7949 27.8252 11.0006 27.8252ZM21.9823 21.3167C21.9823 22.5183 21.0076 22.5973 19.8068 22.5973H2.19411C0.992777 22.5973 0.0197754 22.5182 0.0197754 21.3165V21.1095C0.0197754 20.2453 0.527275 19.5053 1.25644 19.1543L1.94678 13.1955C1.94678 8.83315 5.03177 5.19215 9.13877 4.33315V2.01982C9.13877 0.991488 9.97261 0.157654 11.0014 0.157654C12.0298 0.157654 12.8636 0.991488 12.8636 2.01982V4.33332C16.9706 5.19215 20.0556 8.83282 20.0556 13.1957L20.7459 19.1553C21.4751 19.5068 21.9823 20.2455 21.9823 21.1097V21.3167Z"/>

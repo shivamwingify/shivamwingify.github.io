@@ -105,7 +105,7 @@
 			console.log(checkStatus);
 
 			if (checkStatus== "subscribed") {
-				_pcq.push(['addSubscriberToSegment', 'FF', callbackForAddToSegment]);
+				_pcq.push(['addSubscriberToSegment', 'Testing', callbackForAddToSegment]);
 				function callbackForAddToSegment(response) {
 				    if(response === -1) {
 					console.log('User is not a subscriber or has blocked notifications');

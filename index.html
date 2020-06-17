@@ -100,25 +100,25 @@
 			if (Notification.permission== "granted"){
 				alert("Already Subscribed!!!");
 			}
-			_pcq.push(['triggerOptIn']);
-			var checkStatus = localStorage.getItem('wingify_push_subscription_status');
-			console.log(checkStatus);
+			_pcq.push(['triggerOptIn']);			
+		}
+		var checkStatus = localStorage.getItem('wingify_push_subscription_status');
+		console.log(checkStatus);
 
-			if (checkStatus== "subscribed") {
-				_pcq.push(['addSubscriberToSegment', 'Testing', callbackForAddToSegment]);
-				function callbackForAddToSegment(response) {
-				    if(response === -1) {
-					console.log('User is not a subscriber or has blocked notifications');
-				    }
+		function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+			_pcq.push(['addSubscriberToSegment', 'Testing', callbackForAddToSegment]);
+			function callbackForAddToSegment(response) {
+			    if(response === -1) {
+				console.log('User is not a subscriber or has blocked notifications');
+			    }
 
-				    if(response === false) {
-					console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
-				    }
+			    if(response === false) {
+				console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
+			    }
 
-				    if(response === true) {
-					console.log('User got added to the segment FF successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
-				    }
-				}
+			    if(response === true) {
+				console.log('User got added to the segment FF successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
+			    }
 			}
 		}
 

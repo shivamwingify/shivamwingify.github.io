@@ -105,7 +105,7 @@
 			console.log(checkStatus);
 
 			if (checkStatus== "subscribed") {
-				_pcq.push(['addSubscriberToSegment', 'Test', callbackForAddToSegment]);
+				_pcq.push(['addSubscriberToSegment', 'FF', callbackForAddToSegment]);
 				function callbackForAddToSegment(response) {
 				    if(response === -1) {
 					console.log('User is not a subscriber or has blocked notifications');
@@ -116,7 +116,7 @@
 				    }
 
 				    if(response === true) {
-					console.log('User got added to the segment successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
+					console.log('User got added to the segment FF successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
 				    }
 				}
 			}

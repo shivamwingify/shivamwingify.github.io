@@ -105,7 +105,6 @@
 		}
 		window.vwoInterval1592407605988 = setInterval(function() {
 			var checkStatus = localStorage.getItem('wingify_push_subscription_status');
-			console.log(checkStatus);
 			if (checkStatus== "subscribed") {
 				_pcq.push(['addSubscriberToSegment', 'Testing', callbackForAddToSegment]);
 				function callbackForAddToSegment(response) {
@@ -116,7 +115,8 @@
 						console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
 					}
 					if(response === true) {
-						console.log('User got added to the segment FF successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
+						console.log('User got added to the segment \'Testing\' successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
+						alert("Subscriber added to the segment name \'Testing\'");
 					}
 				}
 				clearInterval(window.vwoInterval1592407605988);
